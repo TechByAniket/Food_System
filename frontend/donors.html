@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
+
+      <style>
+        input{
+          cursor: pointer;
+        }
+
+        #donors_foodlistings{
+          overflow-y: auto;
+          overflow-x: auto;
+        }
+      </style>
+
+    <title>Donors</title>
+</head>
+<body>
+    <nav class="h-32 w-full p-6 bg-[#e7e0d2] flex items-center align-middle">
+        <a href="index.html">
+          <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
+        </a>
+  
+        <a href="index.html">
+          <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
+        </a>
+        
+        <div id="navtabs_container" class="flex ml-[660px] align-middle gap-9 font-medium  text-[22px] list-none">
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Home</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
+        </div>
+      </nav>
+
+    <div id="donors_section1" class="h-[1100px] w-full flex pl-2 pr-2">
+        <div id="donors_filter" class="h-full w-[25%]">
+            <h1 class="text-black font-[Poppins] text-[28px] font-semibold ml-5 mt-4">DONORS | Filters</h1>
+            <div id="donors_filterlist" class="h-[922px] mt-5 flex flex-col gap-5 items-center bg-red-50">
+
+                <h3 class="font-[Poppins] ml-[-64%] mt-3 text-yellow-800 text-xl font-bold">Donor Type</h3>
+                <div id="donor_type" class="flex flex-col h-24 w-[90%] -mt-5 p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black">
+                  <ul class="ml-6">
+                    <li><input type="checkbox" name="Individual" id="Individual" class="mr-4 scale-150 accent-black "><label for="Individual" class="cursor-pointer">Individual</label></li>
+                    <li><input type="checkbox" name="Restaurant" id="Restaurant" class="mr-4 scale-150 accent-black "><label for="Restaurant" class="cursor-pointer">Restaurant</label></li>
+                    <li><input type="checkbox" name="Catering_Service" id="Catering_Service" class="mr-4 scale-150 accent-black "><label for="Catering_Service" class="cursor-pointer">Catering Service</label></li>
+                  </ul>
+                </div>
+
+                <h3 class="font-[Poppins] ml-[-58%] text-yellow-800 text-xl font-bold">Donor Ratings</h3>
+                <div id="donor_rating" class="flex flex-col h-24 w-[90%] -mt-5 p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black">
+                  <ul class="ml-6">
+                    <li><input type="checkbox" name="5_Star" id="5_Star" class="mr-4 scale-150 accent-black "><label for="5_Star" class="cursor-pointer">5 Star</label></li>
+                    <li><input type="checkbox" name="4_Star_Above" id="4_Star_Above" class="mr-4 scale-150 accent-black "><label for="4_Star_Above" class="cursor-pointer">4 Star & Above</label></li>
+                    <li><input type="checkbox" name="3_Star_Above" id="3_Star_Above" class="mr-4 scale-150 accent-black "><label for="3_Star_Above" class="cursor-pointer">3 Star & Above</label></li>
+                  </ul>
+                </div>
+
+                <h3 class="font-[Poppins] ml-[-320px] text-yellow-800 text-xl font-bold">Food Type</h3>
+                <div id="food_type" class="flex flex-col h-fit w-[90%] -mt-5 p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black">
+                  <ul class="ml-6">
+                    <li><input type="checkbox" name="Cooked_Food" id="Cooked_Food" class="mr-4 scale-150 accent-black "><label for="Cooked_Food" class="cursor-pointer">Cooked Food</label></li>
+                    <li><input type="checkbox" name="Bakery_Food" id="Bakery_Food" class="mr-4 scale-150 accent-black "><label for="Bakery_Food" class="cursor-pointer">Baked Food</label></li>
+                    <li><input type="checkbox" name="Fruits_Vegetables" id="Fruits_Vegetables" class="mr-4 scale-150 accent-black "><label for="Fruits_Vegetables" class="cursor-pointer">Fruits & Vegetables</label></li>
+                    <li><input type="checkbox" name="Dairy_Poducts" id="Dairy_Poducts" class="mr-4 scale-150 accent-black "><label for="Dairy_Poducts" class="cursor-pointer">Dairy Products</label></li>
+                    <li><input type="checkbox" name="Packaged _Food" id="Packaged _Food" class="mr-4 scale-150 accent-black "><label for="Packaged _Food" class="cursor-pointer">Packaged Food</label></li>
+                  </ul>
+                </div>
+
+                <h3 class="font-[Poppins] ml-[-58%] text-yellow-800 text-xl font-bold">Food Category</h3>
+                <div id="food_category" class="flex flex-col h-24 w-[90%] -mt-5 p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black">
+                  <ul class="ml-6">
+                    <li><input type="checkbox" name="Veg" id="Veg" class="mr-4 scale-150 accent-black "><label for="Veg" class="cursor-pointer">Veg</label></li>
+                    <li><input type="checkbox" name="Non-Veg" id="Non-Veg" class="mr-4 scale-150 accent-black "><label for="Non-Veg" class="cursor-pointer">Non-Veg</label></li>
+                  </ul>
+                </div>
+
+                <h3 class="font-[Poppins] ml-[-60%] text-yellow-800 text-xl font-bold">Food Quantity</h3>
+                <div id="food_quantity" class="flex flex-col h-24 w-[90%] -mt-5 p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black">
+                  <ul class="ml-6">
+                    <li><input type="checkbox" name="Small" id="Small" class="mr-4 scale-150 accent-black "><label for="Small" class="cursor-pointer">Small(1-5 Servings)</label></li>
+                    <li><input type="checkbox" name="Medium" id="Medium" class="mr-4 scale-150 accent-black "><label for="Medium" class="cursor-pointer">Medium(6-20 Servings)</label></li>
+                    <li><input type="checkbox" name="Large" id="Large" class="mr-4 scale-150 accent-black "><label for="Large" class="cursor-pointer">Large(20+ Servings)</label></li>
+                  </ul>
+                </div>
+               
+                <h3 class="font-[Poppins] ml-[-58%] text-yellow-800 text-xl font-bold">Pickup/Delivery</h3>
+                <div id="pickup_delivery" class="flex flex-col h-24 w-[90%] -mt-5 p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black">
+                  <ul class="ml-6">
+                    <li class="cursor-pointer"><input type="checkbox" name="Pickup_Receiver" id="Pickup_Receiver" class="mr-4 scale-150 accent-black "><label for="Pickup_Receiver" class="cursor-pointer">Pickup By Receiver</label></li>
+                    <li><input type="checkbox" name="Delivery_Donor" id="Delivery_Donor" class="mr-4 scale-150 accent-black "><label for="Delivery_Donor" class="cursor-pointer">Delivery By Donor</label></li>
+                    <li><input type="checkbox" name="Third_Party_Delivery" id="Third_Party_Delivery" class="mr-4 scale-150 accent-black "><label for="Third_Party_Delivery" class="cursor-pointer">Third Party Delivery</label></li>
+                  </ul>
+                </div>
+                
+
+            </div>
+        </div>
+        
+        <div id="donors_listings" class="h-[1000px] w-[75%] flex flex-col bg-emerald-50">
+            <div id="donors_searchdiv" class="h-20 w-full p-2 bg-white">
+              <form action="" class="flex items-center">
+                <input type="search" id="donors_searchbox" placeholder="Search Donors/Restaurants"  class="relative h-16 w-[50%] pl-6 pr-6 border-[1px] border-black ml-[5%] text-xl rounded-4xl focus:outline-none">
+                <i class="absolute m-[38%] fa-solid fa-magnifying-glass text-2xl cursor-pointer"></i>
+              </form>
+            </div>
+
+            <div id="donors_foodlistings" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto">
+
+              <div class="listing min-h-96 w-[1300px] mt-4 ml-[2%] p-5 rounded-3xl border-2 border-transparent hover:border-black bg-cyan-100 shadow-2xl shadow-gray-300 hover:shadow-2xl hover:shadow-black text-xl cursor-pointer">
+                <div>
+                  <h2 class="font-[Poppins] text-3xl font-bold inline text-yellow-800">Fresh Misal Pav and GulabJamun</h2>
+                  <img src="Veg.jpg" alt="" class="h-10 w-10 block float-right">
+                </div>
+                <div id="donors_listing_deatils" class="h-40 w-[30%] inline-block">
+                  <h2 class="font-[Poppins] text-xl font-semibold inline">Jay Mahararashtra</h2>
+                  <h5 class="font-[Poppins] text-lg inline">RESTAURANT</h5>
+                  <h3 class="text-lg"><i class="fa-solid fa-location-dot text-xl text-red-500 mr-2 mt-7"></i>Juinagar,Navi Mumbai</h3>
+                  <h3 class="text-lg"><i class="fa-solid fa-box text-xl mr-2 mt-2 "></i>Medium(6-20 Servings)</h3>
+                  <h3 class="text-lg"><i class="fa-solid fa-utensils text-xl mr-2 mt-2 "></i>Cooked Food</h3>
+                  <h3 class="text-lg"><i class="fa-solid fa-truck text-xl mr-2 mt-2 "></i>Delivery by Donor</h3>
+                  <h3 class="text-lg"><i class="fa-solid fa-phone text-xl mr-2 mt-2"></i>+91 1234567890</h3>
+                  <h3 class="text-lg"><i class="fa-solid fa-star text-xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i></h3>
+                </div>
+                <div id="donors_listing_photos" class="h-44 w-[55%] bg-amber-300 float-right mt-12 -mr-6 flex">
+                  <img src="/bg img 1.jpg" alt="" class="min-h-full w-44">
+                  <img src="/BGIMG3.png" alt="" class="min-h-full w-44">
+                  <img src="/bg img 1.jpg" alt="" class="min-h-full w-44">
+                  <img src="/BGIMG3.png" alt="" class="min-h-full w-44">
+                </div>
+                <form action="/index.html">
+                  <button id="request_food_btn" class="h-12 w-56 bg-green-400 rounded-3xl text-lg float-right cursor-pointer text-black border-2 border-transparent hover:border-black">Request</button>
+                </form>
+                
+              </div>
+            
+            </div>
+        </div>
+    </div>
+    <footer class="h-52 w-full bg-gray-800"></footer>
+</body>
+</html>

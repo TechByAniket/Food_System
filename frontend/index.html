@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="/src/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    
+    <script type="module" src="/src/index.js"></script>
+    <script type="module" src="/src/login_registration.js"></script>
+
+    <title>Vite App</title>
+  </head>
+  <body class="flex flex-col font-[Poppins]">
+    <nav class="h-32 w-full p-6 bg-[#e7e0d2] flex items-center align-middle">
+      <a href="index.html">
+        <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
+      </a>
+
+      <a href="index.html">
+        <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
+      </a>
+      
+      <div id="navtabs_container" class="flex ml-[660px] align-middle gap-9 font-medium  text-[22px] list-none">
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Home</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
+      </div>
+    </nav>
+
+    <div id="section1" class="relative flex h-[800px] w-full bg-[url('/NGO_Childs_img.jpg')] bg-cover bg-center" >
+      <div id="black_cover" class="h-[800px] w-full absolute bg-black/60 inset-0 flex">
+
+        <div id="leftdiv-section1" class="h-[800px] w-[50%] -mt-16">
+          <h1 class="font-[Ubuntu] text-white text-8xl mt-44 ml-5 font-extrabold">Wasted Food?</h1>
+          <h1 class="font-[Ubuntu] text-white text-7xl ml-5 font-extrabold">Not Anymore!</h1>
+          <p class="font-[Ubuntu] text-4xl text-white ml-5 mt-12">Your extra food is not waste,</p>
+          <p class="font-[Ubuntu] text-4xl text-white ml-5">it is hope for someone in need. Join our mission today!</p>
+          <!-- <img src="/smile-logo.png" alt="" class="h-60 w-80 -mt-6"> -->
+        </div>
+
+        <div id="rightdiv-section1" class="h-[800px] w-[50%] mr-10 flex justify-end items-center">
+          <div id="loginbox" class="h-[70%] w-[70%] flex flex-col rounded-4xl justify-center p-10 border-transparent border-2 hover:border-white">
+            <div id="loginas" class="font-[Ubuntu] h-20 w-[80%] text-3xl font-bold text-white mb-12 -mt-10 ml-[60px] flex justify-center items-center">Login as</div>
+
+              <div id="loginbtns" class="flex flex-col">
+                <button id="donor" class="loginbox-buttons h-20 w-[80%] bg-[#19aa59] mb-8 ml-16 text-xl text-white font-[Ubuntu] rounded-3xl border-2 border-transparent hover:border-black cursor-pointer">Donor</button>
+                <hr class=" text-white">
+                <button id="charity" class="loginbox-buttons h-20 w-[80%] bg-[#19aa59] ml-16 mt-8 text-xl text-white font-[Ubuntu] rounded-3xl border-2 border-transparent hover:border-black cursor-pointer">Charity</button>
+              </div>
+
+              <div id="loginForm" class="hidden flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-3">Login</h3>
+                <input type="text" placeholder="Username" class="h-16 w-full px-3 py-2 text-lg border rounded-md mb-10 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <input type="password" placeholder="Password" class="h-16 w-full px-3 py-2 text-lg border rounded-md mb-10 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <button class="h-12 bg-green-500 text-white text-xl px-4 py-2 rounded-md w-full hover:bg-green-600">
+                    Login
+                </button>
+              </div>
+
+              <div id="registerlink" class="mt-8 h-12 flex justify-center items-center"><a href="#index.html" class="text-white text-xl font-[Ubuntu] hover:text-blue-200">Don't have an Account ? Register Here!</a></div>
+            </div>
+        </div>
+
+        <div id="registerForm" class="absolute hidden inset-10 flex flex-col p-3 bg-white shadow-lg rounded-lg">
+          <form action="/index.html" id="registerFORM">
+          <div class="h-12 w-full text-2xl font-bold p-2 flex items-center border-b-[2px] border-dashed border-black">New Registration
+            <div class="h-10 flex justify-center gap-2 w-96 ml-[65%]">
+              <label class="cursor-pointer flex gap-2">
+                  <input type="radio" name="userType" value="Donor" id="donorRadio" class="formbtns" required> 
+                  <span id="DonorBtnBox" class="radio-label h-10 w-44 flex items-center justify-center rounded cursor-pointer border">Donor</span>
+              </label>
+          
+              <label class="cursor-pointer flex gap-2">
+                  <input type="radio" name="userType" value="Charity" id="charityRadio" class="formbtns" required>
+                  <span id="CharityBtnBox" class="radio-label h-10 w-44 flex items-center justify-center rounded cursor-pointer border">Charity</span>
+              </label>
+          </div>
+          </div>
+        
+        <div class="h-[570px] overflow-y-auto">
+          <div class="w-full grid grid-rows-3 grid-cols-3">
+            <div class="m-5 text-lg">
+              <label class="block text-gray-700 font-medium">Name of Organisation</label>
+              <input type="text" id="org_name" placeholder="Enter name of your organisation"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>  
+
+            <div class="m-5 text-lg">
+              <label class="block text-gray-700 font-medium">Owner Name</label>
+              <input type="text" id="owner" placeholder="Enter owner name"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>  
+
+            <div class="m-5 text-lg">
+              <label class="block text-gray-700 font-medium">Phone</label>
+              <input type="tel" id="phone" placeholder="Enter your phone"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>  
+
+            <div class="mx-5 my-2 text-lg">
+              <label class="block text-gray-700 font-medium">Email</label>
+              <input type="email" id="email" placeholder="Enter your email"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>  
+
+            <div class="mx-5 my-2 text-lg">
+              <label class="block text-gray-700 font-medium">Location</label>
+              <input id="location" type="text" placeholder="Select your location"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+              <ul id="suggestions" class="absolute border p-2 w-[31%] bg-white"></ul>
+              <button id="currentLocation" class="mt-2 px-4 py-2 bg-green-500 text-white rounded">Use Current Location</button>
+            </div>  
+
+            <div class="mx-5 my-2 text-lg">
+              <label class="block text-gray-700 font-medium">Area,City</label>
+              <input type="text" id="area_city" placeholder="Enter area and city (area name,city name)"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>
+            
+            <div class="m-5 text-lg">
+              <label class="block text-gray-700 font-medium">Government ID</label>
+              <input type="number" id="government_id" placeholder="(Aadhar, PAN, Driving License, etc.)"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div> 
+
+            <div class="m-5 text-lg">
+              <label for="pickup_method" class="block text-gray-700 font-medium">Preferred Pickup Method</label>
+              <select id="pickup_method" name="pickup_method" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                <option value="" selected disabled>Select Pickup Method</option>
+                <option value="self-drop">Self Drop</option>
+                <option value="pickup">Pickup</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+
+            
+            <div class="m-5 text-lg">
+              <label class="block text-gray-700 font-medium">Username</label>
+              <input type="text" id="username" placeholder="Enter unique username"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>
+
+            <div class="m-5 text-lg">
+              <label class="block text-gray-700 font-medium">Create Password</label>
+              <input type="password" id="password" placeholder="Create a strong password"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            </div>
+
+            <div class="text-lg text-gray-700 mx-5 block w-full">
+              <p>✔ I confirm that the food is fresh, clean, and safe for consumption.</p>
+              <p>✔ I understand that donating expired or unsafe food may result in legal action.</p>
+            </div>
+            <div class="text-lg text-gray-700 mx-5 block w-full">
+              <p>✔ I agree to pack the food hygienically and handle it responsibly.</p>
+              <p>✔ I acknowledge that the organization is not liable for any issues post-donation.</p>
+            </div>
+          </div>
+        </div>
+
+          <div class="h-12 w-full text-2xl font-bold p-2 flex items-center">
+            <label class="flex items-center">
+              <input type="checkbox" id="agree_checkbox" required class="mr-2 scale-150 accent-green-500" >
+              <span class="text-xl text-red-600">I have read and agree to the food donation terms.</span>
+            </label>
+            <button type="submit" class="h-12 w-60 text-white bg-green-500 ml-[55%] rounded-xl">Register</button>
+          </div>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div id="section2" class="h-[500px] w-full bg-amber-50 mb-24">
+      <div class="h-20 w-full flex flex-col justify-center items-center">
+        <h2 class="font-[Bebas Neue] text-black text-4xl font-extrabold mt-5">"NO WASTE, JUST TASTE!"</h2> 
+        <h4 class="font-[Ubuntu] text-black text-2xl ">We Bridge the Gap!</h4>       
+      </div>
+
+      <div class="h-full w-full flex justify-center items-center">
+        
+        <div id="box1" class="feature-cards h-[90%] w-96 m-5 p-5 flex flex-col items-center bg-green-100 rounded-3xl border-2 border-transparent hover:border-black duration-200 delay-100 ease-in-out">
+          <h1 class="font-[Bebas Neue] text-3xl text-black font-bold mb-4 hover:text-blue-500 duration-150 delay-100 cursor-pointer">QUICK & EASY</h1>
+          <div class="h-64 w-full bg-[url('/quick-easy3.jpg')] bg-cover bg-top"></div>
+          <p class="font-[Ubuntu] text-xl text-black p-4">Just a few clicks, and your extra food reaches those in need.</p>
+        </div>
+       
+        <div id="box2" class="feature-cards h-[90%] w-96 m-5 p-5 flex flex-col items-center bg-green-100 rounded-3xl border-2 border-transparent hover:border-black duration-200 delay-100 ease-in-out">
+          <h1 class="font-[Bebas Neue] text-3xl text-black font-bold mb-4 hover:text-blue-500 duration-150 delay-100 cursor-pointer">SECURE & VERIFIED</h1>
+          <div class="h-64 w-full bg-[url('/verified3-removebg.png')] bg-cover bg-top"></div>
+          <p class="font-[Ubuntu] text-xl text-black p-4">Your donations go directly to trusted charities and shelters.</p>
+        </div>
+
+        <div id="box3" class="feature-cards h-[90%] w-96 m-5 p-5 pb-2 flex flex-col items-center bg-green-100 rounded-3xl border-2 border-transparent hover:border-black duration-200 delay-100 ease-in-out">
+          <h1 class="font-[Bebas Neue] text-3xl text-black font-bold mb-4 hover:text-blue-500 duration-150 delay-100 cursor-pointer">INSTANT ALERTS</h1>
+          <div class="h-64 w-full bg-[url('/notification2-removebg.png')] bg-cover bg-center"></div>
+          <p class="font-[Ubuntu] text-xl text-black p-4">Get real-time notifications about your donation’s pickup, delivery, and impact. </p>
+        </div>
+
+        <div id="box4" class="feature-cards h-[90%] w-96 m-5 p-5 flex flex-col items-center bg-green-100 rounded-3xl border-2 border-transparent hover:border-black duration-200 delay-100 ease-in-out">
+          <h1 class="font-[Bebas Neue] text-3xl text-black font-bold mb-4 hover:text-blue-500 duration-150 delay-100 cursor-pointer">ANYTIME, ANYWHERE</h1>
+          <div class="h-64 w-full bg-[url('/GPS.jpg')] bg-cover bg-center"></div>
+          <p class="font-[Ubuntu] text-xl text-black p-4">Locate nearby donation centers and recipients in real time.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="section3" class="h-[600px] w-full overflow-hidden flex justify-center items-center bg-amber-400">
+      <div id="slider" class="h-full w-[400vw] p-10 flex transition-transform duration-700 ease-in-out">
+        <div class="w-[50%] min-w-[50%] flex items-center justify-center bg-red-400 text-white text-2xl font-bold rounded-2xl shadow-black shadow-2xl">
+          <img src="/hunger1.jpg" alt="" class="h-full w-full object-cover rounded-2xl shadow-black shadow-2xl">
+        </div>
+        <div class="w-[50%] min-w-[50%] ml-5 flex items-center justify-center bg-blue-400 text-white text-2xl font-bold rounded-2xl shadow-black shadow-2xl">
+          <img src="/hunger2.jpg" alt="" class="h-full w-full object-cover rounded-2xl shadow-black shadow-2xl">
+        </div>
+        <div class="w-[50%] min-w-[50%] ml-10 flex items-center justify-center bg-green-400 text-white text-2xl font-bold rounded-2xl shadow-black shadow-2xl">
+          <img src="/hunger3.jpg" alt="" class="h-full w-full object-cover rounded-2xl shadow-black shadow-2xl">
+        </div>
+        <div class="w-[50%] min-w-[50%] ml-10 flex items-center justify-center bg-gray-400 text-white text-2xl font-bold rounded-2xl shadow-black shadow-2xl">
+          <!-- Empty div for smooth transition -->
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <!-- <div id="section3" class="h-[600px] w-full overflow-hidden flex justify-center items-center bg-amber-400">
+      <div id="slider" class="h-full w-full p-10 flex transition-transform duration-700 ease-in-out">
+        <div class="min-w-full mr-10 flex items-center justify-center bg-red-400 text-white text-2xl font-bold">
+          <div class="h-full w-[50%] bg-[url('/hunger1.jpg')] bg-cover bg-center "></div>
+          <div></div>
+        </div>
+        <div class="min-w-full mr-10 ml-10 flex items-center justify-center bg-blue-400 text-white text-2xl font-bold">Aniket Limbaji</div>
+        <div class="min-w-full mr-10 ml-10 flex items-center justify-center bg-green-400 text-white text-2xl font-bold">Aniket Limbaji Khemnar</div>
+      </div>
+    </div> -->
+
+
+    <footer class="h-52 w-full bg-gray-800"></footer>
+  </body>
+</html>

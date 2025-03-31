@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="/src/donor_dashboard.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      </style>
+
+
+      <style>
+        *{
+            font:"Poppins";
+        }
+
+        input{
+          cursor: pointer;
+        }
+
+        #donors_foodlistings{
+          overflow-y: auto;
+          overflow-x: auto;
+        }
+      </style>
+
+    <title>Donors</title>
+</head>
+<body>
+    <nav class="h-32 w-full p-6 bg-[#e7e0d2] flex items-center align-middle">
+        <a href="index.html">
+          <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
+        </a>
+  
+        <a href="index.html">
+          <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
+        </a>
+        
+        <div id="navtabs_container" class="flex ml-[660px] align-middle gap-9 font-medium  text-[22px] list-none">
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Home</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
+        </div>
+      </nav>
+
+    <div id="donors_section1" class="h-[1100px] w-full flex pl-2 pr-2">
+        <div id="donors_filter" class="h-full w-[25%]">
+            <h1 class="text-black font-[Poppins] text-[28px] font-semibold ml-5 mt-4">Hello, User</h1>
+            <div id="donors_filterlist" class="h-[980px] mt-5 flex flex-col gap-5 items-center bg-[#145DA0]">
+
+                <h3 class="font-[Poppins] ml-[-60%] mt-3 text-white text-2xl font-bold">Dashboard</h3>
+                <div id="list_food_btn_div" class="flex flex-col bg-[#B1D4E0] h-16 w-[90%] p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black cursor-pointer">
+                  <ul class="ml-6">
+                    <li id="list_food_btn" class="text-xl">User Profile</li>
+                  </ul>
+                </div>
+
+                <div id="inbox_btn_div" class="flex flex-col bg-[#B1D4E0] h-16 w-[90%] p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black cursor-pointer">
+                    <ul class="ml-6">
+                      <li id="inbox_btn" class="text-xl">Inbox</li>
+                    </ul>
+                </div>
+
+                <div id="past_donations_btn_div" class="flex flex-col bg-[#B1D4E0] h-16 w-[90%] p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black cursor-pointer">
+                    <ul class="ml-6">
+                      <li id="past_donations_btn" class="text-xl">Past Donations</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        
+        <!-- <main class="w-full bg-black"> -->
+
+
+        <div id="user_profile_and_food_list_section" class="h-[1000px] w-[75%] flex flex-col bg-white">
+            <div id="donors_searchdiv" class="h-20 w-full p-2 bg-white flex">
+              <form action="" class="flex items-center">
+                <button id="donor_logout" class="h-16 w-44 font-[Poppins] bg-red-400 text-black text-xl rounded-3xl font-bold ml-[1210px]">Logout</button>
+              </form>
+            </div>
+
+            <div id="donor_info" cla ss="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto ">
+                <section id="user_profile_and_rating" class="flex">
+                    <div class="h-[200px] w-[70%] mx-auto  p-6 bg-[#2E8BC0] text-white shadow-lg rounded-4xl flex items-center gap-6 hover:shadow-2xl hover:shadow-black">
+                     <!-- Left Div with Background Image -->
+                        <div 
+                            class="w-32 h-32 bg-gray-300 rounded-full bg-cover bg-center"
+                            style="background-image: url('/public/noprofile.avif');">
+                        </div>
+                    
+                        <!-- Right Div with Donor Details -->
+                        <div class="font-[Poppins] flex flex-col gap-2 ml-10">
+                            <h2 class="text-2xl font-bold">Jay Maharashtra Hotel</h2>
+                            <p class="text-white text-lg">Juinagar,Navi Mumbai</p>
+                            <p class="text-white text-lg"><i class="fa-solid fa-phone"></i>+91 1425789630</p>
+                            <p class="text-white text-lg">Total Donations: 12</p>
+                        </div>
+                    </div>
+
+                    <div class="h-[200px] w-[20%] font-[Poppins] flex flex-col mx-auto ml-10 p-6 bg-[#2E8BC0] text-white shadow-lg rounded-4xl items-center gap-6 hover:shadow-2xl hover:shadow-black">
+                        <div class="h-40 w-40 rounded-full border-[16px] border-green-500 text-white text-3xl flex flex-col justify-center items-center">
+                            12
+                            <h2 class="text-white text-lg">Donations</h2>
+                        </div>
+                    </div>
+                </section>
+
+                    
+
+
+
+
+
+
+                <section id="middle" class="w-[95%] font-[Poppins] bg-[#2E8BC0] mx-auto mt-6 p-6 text-white shadow-lg rounded-4xl hover:shadow-2xl hover:shadow-black">
+                    <h2 class="h-10 font-[Poppins] text-2xl text-black font-bold ml-9">List Food</h2>
+                    <form class="space-y-4 flex flex-row">
+                        <div class="h-full flex flex-col gap-3 w-[50%]">
+                            <input type="text" placeholder="Food Name" class="w-full bg-white text-black p-2 border rounded-2xl" required>
+                            <select class="w-full bg-white text-black p-2 border rounded-2xl" required>
+                                <option value="" disabled selected>Select Quantity</option>
+                                <option value="small">Small (1-5 Servings)</option>
+                                <option value="medium">Medium (6-20 Servings)</option>
+                                <option value="large">Large (20+ Servings)</option>
+                            </select>
+                            <select class="w-full font-[Poppins] bg-white text-black p-2 border rounded-2xl" required>
+                                <option value="" disabled selected>Select Food Type</option>
+                                <option value="cooked">Cooked Food</option>
+                                <option value="baked">Baked Food</option>
+                                <option value="fruits_vegetables">Fruits & Vegetables</option>
+                                <option value="dairy">Dairy Products</option>
+                                <option value="packaged">Packaged Food</option>
+                                <option value="any">Any</option>
+                            </select>
+                            <textarea placeholder="Description" class="w-full bg-white text-black p-2 border rounded-2xl" required></textarea>
+                            <button type="submit" class="w-full bg-green-400 text-white text-xl font-bold py-2 rounded-lg hover:bg-green-500 cursor-pointer">
+                            List Food
+                            </button>
+                        </div>
+
+                        <div id="upload_img" class="w-[50%] ml-10 flex flex-col items-center space-y-4">
+                            <input type="file" id="imageInput" class="w-full bg-white text-black p-2 border rounded-2xl">
+                            <img id="previewImg" class="h-40 w-80 rounded-lg hidden ">
+                        </div>
+                    </form>
+                </section>
+
+
+
+
+
+
+
+        <section class="flex">
+            <div class="h-[300px] w-[95%] bg-[#2E8BC0] m-10 rounded-4xl hover:shadow-2xl hover:shadow-black">
+                <div><h2 class="h-16 font-[Poppins] pt-5 text-2xl text-black font-bold ml-14">Impact Metrics</h2></div>
+                <!-- Notification Box -->
+                <div class="w-[100%] h-[590px] -mt-10 flex flex-row gap-5 p-10 space-y-4 overflow-x-auto">
+
+                    <div class="p-4 h-44 bg-white shadow-md rounded-4xl flex items-center gap-6 hover:bg-sky-800 hover:text-white hover:shadow-2xl hover:shadow-black cursor-pointer">
+                        <div class="flex flex-col text-gray-600 hover:text-white">
+                            <h3 class="text-lg font-semibold">Total Donations</h3>
+                            <p>Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 h-44 bg-white shadow-md rounded-4xl flex items-center gap-6 hover:bg-sky-800 hover:text-white hover:shadow-2xl hover:shadow-black cursor-pointer">
+                        <div class="flex flex-col text-gray-600 hover:text-white">
+                            <h3 class="text-lg font-semibold">Total Listings</h3>
+                            <p>Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 h-44 bg-white shadow-md rounded-4xl flex items-center gap-6 hover:bg-sky-800 hover:text-white hover:shadow-2xl hover:shadow-black cursor-pointer">
+                        <div class="flex flex-col text-gray-600 hover:text-white">
+                            <h3 class="text-lg font-semibold">Impact</h3>
+                            <p>Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+    
+                    
+                </div>
+                <!-- <div class="h-10 w-full bg-black"></div> -->
+            </div>
+        </section>   
+
+
+       
+
+            
+            </div>
+        </div>
+
+
+        <section id="donor_inbox_section" class="flex h-[1100px] w-[75%] mt-10 hidden ">
+            <div class="h-[980px] w-[100%] m-10 mr-5 rounded-4xl bg-[#2E8BC0] hover:shadow-2xl hover:shadow-black">
+                <div><h2 class="h-16 font-[Poppins] pt-5 text-2xl text-black font-bold ml-14">Inbox</h2></div>
+    
+                <div class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');">
+                        </div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Donation Picked Up</h3>
+                            <p class="text-gray-600">Your recent donation has been collected successfully.</p>
+                        </div>
+                    </div>
+    
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">New Donation Request</h3>
+                            <p class="text-gray-600">A nearby NGO is requesting food donations.</p>
+                        </div>
+                    </div>
+    
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                </div>
+    
+            </div>
+        </section>
+
+
+
+        <section id="past_donations_section" class="flex h-[1100px] w-[75%] mt-10 hidden ">
+            <div class="h-[980px] w-[100%] m-10 mr-5 rounded-4xl bg-[#2E8BC0] hover:shadow-2xl hover:shadow-black">
+                <div><h2 class="h-16 font-[Poppins] pt-5 text-2xl text-black font-bold ml-14">Past Donations</h2></div>
+    
+                <div class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');">
+                        </div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Donation Picked Up</h3>
+                            <p class="text-gray-600">Your recent donation has been collected successfully.</p>
+                        </div>
+                    </div>
+    
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">New Donation Request</h3>
+                            <p class="text-gray-600">A nearby NGO is requesting food donations.</p>
+                        </div>
+                    </div>
+    
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
+                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
+                        <div class="flex flex-col">
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
+                        </div>
+                    </div>
+
+                </div>
+    
+            </div>
+        </section>
+        
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    
+    <footer class="h-52 w-full bg-gray-800"></footer>
+</body>
+</html>

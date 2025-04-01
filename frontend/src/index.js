@@ -2,6 +2,7 @@ import './style.css'
 
 var featureCards=document.getElementsByClassName('feature-cards');
 var loginBoxButtons=document.getElementsByClassName('loginbox-buttons');
+let currentRole = '';
 
 //FEATURE-CARDS------>>>>>>>>
 for(let i=0;i<featureCards.length;i++){
@@ -226,3 +227,110 @@ document.getElementById("registerFORM").onsubmit = function() {
         document.getElementById("registerFORM").reset();
     }, 500);  // Small delay to ensure form submission
 };
+
+
+
+
+
+
+
+
+
+
+
+
+// Set up event listeners for role buttons
+document.getElementById('donor').addEventListener('click', () => setRole('donor'));
+document.getElementById('charity').addEventListener('click', () => setRole('charity'));
+
+function setRole(role) {
+    currentRole = role;
+    document.getElementById('userRole').value = role;
+    document.getElementById('loginForm').classList.remove('hidden');
+    
+    // Visual feedback (optional)
+    document.querySelectorAll('.loginbox-buttons').forEach(btn => {
+        btn.classList.remove('bg-blue-500', 'text-white');
+    });
+    document.getElementById(role).classList.add('bg-blue-500', 'text-white');
+}
+
+
+
+
+
+
+document.getElementById('donor').addEventListener('click', () => {
+    document.getElementById('loginForm').classList.remove('hidden');
+});
+
+document.getElementById('charity').addEventListener('click', () => {
+    document.getElementById('loginForm').classList.remove('hidden');
+});
+
+// Handle login form submission
+document.getElementById('loginBtn').addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const role = document.getElementById('userRole').value;
+
+    try {
+        const response = await fetch("http://127.0.0.1:5000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ username, password, role })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            window.location.href = `http://localhost:5173${data.redirect}`;
+        } else {
+            alert(data.error || "Login failed");
+        }
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("Login error: " + error.message);
+    }
+});
+
+
+
+
+async function checkLoginStatus() {
+    const response = await fetch("http://127.0.0.1:5000/user-status", {
+        method: "GET",
+        credentials: "include"  // ✅ Required for session cookies
+    });
+
+    const data = await response.json();
+    console.log("User status:", data);
+    const home = document.getElementById("home");
+    const logotext=document.getElementById("logotext");
+    const logotext2=document.getElementById("logotext2");
+
+
+    if (data.logged_in) {
+        home.textContent = "Dashboard";  // ✅ Change text to Dashboard
+        
+        if (data.role === "donor") {
+            home.href = "donor_dashboard.html";  // ✅ Redirect donors to their dashboard
+            logotext.href = "donor_dashboard.html";
+            logotext2.href = "donor_dashboard.html";
+        } else {
+            home.href = "charity_dashboard.html";  // ✅ Redirect charities to their dashboard
+            logotext.href = "charity_dashboard.html";
+            logotext2.href = "charity_dashboard.html";
+        }
+    } else {
+        home.textContent = "Home";  // 🔄 Reset to Home if not logged in
+        home.href = "index.html";
+        logotext.href = "index.html";
+        logotext2.href = "index.html";
+    }
+}
+
+checkLoginStatus();

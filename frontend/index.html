@@ -20,11 +20,11 @@
   </head>
   <body class="flex flex-col font-[Poppins]">
     <nav class="h-32 w-full p-6 bg-[#e7e0d2] flex items-center align-middle">
-      <a href="index.html">
+      <a id="logotext" href="index.html">
         <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
       </a>
 
-      <a href="index.html">
+      <a id="logotext2" href="index.html">
         <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
       </a>
       
@@ -53,20 +53,20 @@
             <div id="loginas" class="font-[Ubuntu] h-20 w-[80%] text-3xl font-bold text-white mb-12 -mt-10 ml-[60px] flex justify-center items-center">Login as</div>
 
               <div id="loginbtns" class="flex flex-col">
-                <button id="donor" class="loginbox-buttons h-20 w-[80%] bg-[#19aa59] mb-8 ml-16 text-xl text-white font-[Ubuntu] rounded-3xl border-2 border-transparent hover:border-black cursor-pointer">Donor</button>
+                <button id="donor"  class="loginbox-buttons h-20 w-[80%] bg-[#19aa59] mb-8 ml-16 text-xl text-white font-[Ubuntu] rounded-3xl border-2 border-transparent hover:border-black cursor-pointer">Donor</button>
                 <hr class=" text-white">
-                <button id="charity" class="loginbox-buttons h-20 w-[80%] bg-[#19aa59] ml-16 mt-8 text-xl text-white font-[Ubuntu] rounded-3xl border-2 border-transparent hover:border-black cursor-pointer">Charity</button>
+                <button id="charity"  class="loginbox-buttons h-20 w-[80%] bg-[#19aa59] ml-16 mt-8 text-xl text-white font-[Ubuntu] rounded-3xl border-2 border-transparent hover:border-black cursor-pointer">Charity</button>
               </div>
 
               <div id="loginForm" class="hidden flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg">
                 <h3 class="text-xl font-semibold mb-3">Login</h3>
-                <input type="text" placeholder="Username" class="h-16 w-full px-3 py-2 text-lg border rounded-md mb-10 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <input type="password" placeholder="Password" class="h-16 w-full px-3 py-2 text-lg border rounded-md mb-10 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <button class="h-12 bg-green-500 text-white text-xl px-4 py-2 rounded-md w-full hover:bg-green-600">
+                <input type="hidden" id="userRole">
+                <input type="text" id="username" placeholder="Username" class="h-16 w-full px-3 py-2 text-lg border rounded-md mb-10 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <input type="password" id="password" placeholder="Password" class="h-16 w-full px-3 py-2 text-lg border rounded-md mb-10 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <button id="loginBtn" class="h-12 bg-green-500 text-white text-xl px-4 py-2 rounded-md w-full hover:bg-green-600">
                     Login
                 </button>
-              </div>
-
+            </div>
               <div id="registerlink" class="mt-8 h-12 flex justify-center items-center"><a href="#index.html" class="text-white text-xl font-[Ubuntu] hover:text-blue-200">Don't have an Account ? Register Here!</a></div>
             </div>
         </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/src/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
@@ -29,21 +30,21 @@
 </head>
 <body>
     <nav class="h-32 w-full p-6 bg-[#e7e0d2] flex items-center align-middle">
-        <a href="index.html">
-          <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
-        </a>
-  
-        <a href="index.html">
-          <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
-        </a>
+      <a id="logotext" href="index.html">
+        <div class="h-32 w-36 bg-[url('/FoodLink_Final_Logo.png')] bg-cover bg-center"></div>
+      </a>
+
+      <a id="logotext2" href="index.html">
+        <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
+      </a>
         
-        <div id="navtabs_container" class="flex ml-[660px] align-middle gap-9 font-medium  text-[22px] list-none">
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Home</a></li>
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
-        </div>
+        <div id="navtabs_container" class="flex ml-[600px] align-middle gap-9 font-medium  text-[22px] list-none">
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a id="home" href="index.html">Home</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
+          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
+      </div>
       </nav>
 
     <div id="donors_section1" class="h-[1100px] w-full flex pl-2 pr-2">
@@ -109,6 +110,9 @@
 
             </div>
         </div>
+
+
+
         
         <div id="donors_listings" class="h-[1000px] w-[75%] flex flex-col bg-emerald-50">
             <div id="donors_searchdiv" class="h-20 w-full p-2 bg-white">
@@ -118,9 +122,9 @@
               </form>
             </div>
 
-            <div id="donors_foodlistings" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto">
+            <div id="FOODLIST" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto">
 
-              <div class="listing min-h-96 w-[1300px] mt-4 ml-[2%] p-5 rounded-3xl border-2 border-transparent hover:border-black bg-cyan-100 shadow-2xl shadow-gray-300 hover:shadow-2xl hover:shadow-black text-xl cursor-pointer">
+              <div  class="listing min-h-96 w-[1300px] mt-4 ml-[2%] p-5 rounded-3xl border-2 border-transparent hover:border-black bg-cyan-100 shadow-2xl shadow-gray-300 hover:shadow-2xl hover:shadow-black text-xl cursor-pointer">
                 <div>
                   <h2 class="font-[Poppins] text-3xl font-bold inline text-yellow-800">Fresh Misal Pav and GulabJamun</h2>
                   <img src="Veg.jpg" alt="" class="h-10 w-10 block float-right">
@@ -133,7 +137,6 @@
                   <h3 class="text-lg"><i class="fa-solid fa-utensils text-xl mr-2 mt-2 "></i>Cooked Food</h3>
                   <h3 class="text-lg"><i class="fa-solid fa-truck text-xl mr-2 mt-2 "></i>Delivery by Donor</h3>
                   <h3 class="text-lg"><i class="fa-solid fa-phone text-xl mr-2 mt-2"></i>+91 1234567890</h3>
-                  <h3 class="text-lg"><i class="fa-solid fa-star text-xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i></h3>
                 </div>
                 <div id="donors_listing_photos" class="h-44 w-[55%] bg-amber-300 float-right mt-12 -mr-6 flex">
                   <img src="/bg img 1.jpg" alt="" class="min-h-full w-44">
@@ -152,4 +155,5 @@
     </div>
     <footer class="h-52 w-full bg-gray-800"></footer>
 </body>
+<script type="module" src="/src/donor.js"></script>
 </html>

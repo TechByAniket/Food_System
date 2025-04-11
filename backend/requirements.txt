@@ -55,7 +55,7 @@ pycryptodomex==3.17
 pydantic==2.11.1
 pydantic_core==2.33.0
 PyJWT==2.10.1
-pypiwin32==223
+# pypiwin32==223
 PyQt5==5.15.9
 PyQt5-Qt5==5.15.2
 PyQt5-sip==12.11.1

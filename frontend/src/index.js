@@ -1,6 +1,7 @@
 import './style.css'
 
-const BASE_URL = "https://annasetu-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 var featureCards=document.getElementsByClassName('feature-cards');
 var loginBoxButtons=document.getElementsByClassName('loginbox-buttons');
 let currentRole = '';

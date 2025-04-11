@@ -1,7 +1,7 @@
 import './style.css';
 
-import { createClient } from "@supabase/supabase-js";
-const BASE_URL = "https://annasetu-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const SUPABASE_URL = "https://bdsyggaigzmrnurkmzkn.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkc3lnZ2FpZ3ptcm51cmttemtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNzM0NTgsImV4cCI6MjA1ODc0OTQ1OH0.a4KyrWebWxUIKFxAX6JHLIFGSyVQ3TKyN5OvDGv5y38";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);

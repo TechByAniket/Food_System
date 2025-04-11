@@ -1,7 +1,8 @@
 import './style.css'
 
 
-const BASE_URL = "https://annasetu-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 let inbox=document.getElementById("charity_inbox_section");
 let user_profile=document.getElementById("user_profile_and_food_list_section");
 let received_donations_section=document.getElementById("received_donations_section");

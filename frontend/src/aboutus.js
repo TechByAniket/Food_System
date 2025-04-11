@@ -1,6 +1,6 @@
 import './style.css'
 
-const BASE_URL = "https://annasetu-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 async function checkLoginStatus() {
     const response = await fetch(`${BASE_URL}/user-status`, {
         method: "GET",

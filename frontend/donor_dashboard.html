@@ -6,6 +6,8 @@
     <link href="/src/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="/src/donor_dashboard.js"></script>
+
+    <!-- <script type="module" src="/src/donor.js"></script> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
@@ -43,19 +45,26 @@
             <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
           </a>
         
-        <div id="navtabs_container" class="flex ml-[600px] align-middle gap-9 font-medium  text-[22px] list-none">
+          <div id="navtabs_container" class="flex ml-[600px] align-middle gap-9 font-medium  text-[22px] list-none">
             <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a id="home" href="index.html">Home</a></li>
             <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
             <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
-            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="aboutus.html">About Us</a></li>
+            <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="contactus.html">Contact Us</a></li>
         </div>
       </nav>
 
     <div id="donors_section1" class="h-[1100px] w-full flex pl-2 pr-2">
         <div id="donors_filter" class="h-full w-[25%]">
-            <h1 id="username" class="text-black font-[Poppins] text-[28px] font-semibold ml-5 mt-4">Hello, User</h1>
-            <div id="donors_filterlist" class="h-[980px] mt-5 flex flex-col gap-5 items-center bg-[#145DA0]">
+            <div class="flex items-center justify-between px-5 mt-4">
+                <h1 id="username" class="text-black font-[Poppins] text-[28px] font-semibold">Hello, User</h1>
+                <form action="" class="">
+                    <button id="logoutbtn" class="h-16 w-44 font-[Poppins] bg-red-400 text-black text-xl rounded-2xl font-bold">
+                        Logout
+                    </button>
+                </form>
+            </div>
+            <div id="donors_filterlist" class="h-[980px] mt-2 flex flex-col gap-5 items-center bg-[#145DA0]">
 
                 <h3 class="font-[Poppins] ml-[-60%] mt-3 text-white text-2xl font-bold">Dashboard</h3>
                 <div id="list_food_btn_div" class="flex flex-col bg-[#B1D4E0] h-16 w-[90%] p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black cursor-pointer">
@@ -70,31 +79,29 @@
                     </ul>
                 </div>
 
+                <div id="current_listing_btn_div" class="flex flex-col bg-[#B1D4E0] h-16 w-[90%] p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black cursor-pointer">
+                    <ul class="ml-6">
+                      <li id="past_donations_btn" class="text-xl">Current Listings</li>
+                    </ul>
+                </div>
+
                 <div id="past_donations_btn_div" class="flex flex-col bg-[#B1D4E0] h-16 w-[90%] p-2 font-[Poppins] text-[18px] rounded-2xl border-[1px] border-transparent hover:border-black shadow-2xl hover:shadow-black cursor-pointer">
                     <ul class="ml-6">
                       <li id="past_donations_btn" class="text-xl">Past Donations</li>
                     </ul>
                 </div>
 
+
             </div>
         </div>
-
-
-
-
-
-        
         <!-- <main class="w-full bg-black"> -->
 
 
         <div id="user_profile_and_food_list_section" class="h-[1000px] w-[75%] flex flex-col bg-white">
             <div id="donors_searchdiv" class="h-20 w-full p-2 bg-white flex">
-              <form action="" class="flex items-center">
-                <button id="logoutbtn" class="h-16 w-44 font-[Poppins] bg-red-400 text-black text-xl rounded-3xl font-bold ml-[1210px]">Logout</button>
-              </form>
             </div>
 
-            <div id="donor_info" cla ss="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto ">
+            <div id="donor_info" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto ">
                 <section id="user_profile_and_rating" class="flex">
                     <div class="h-[200px] w-[70%] mx-auto  p-6 bg-[#2E8BC0] text-white shadow-lg rounded-4xl flex items-center gap-6 hover:shadow-2xl hover:shadow-black">
                      <!-- Left Div with Background Image -->
@@ -104,18 +111,12 @@
                         </div>
                     
                         <!-- Right Div with Donor Details -->
-                        <div class="font-[Poppins] flex flex-col gap-2 ml-10">
+                        <div class="font-[Poppins] flex flex-col gap-1 ml-10">
                             <h2 id="org_name" class="text-2xl font-bold">Organisation Name</h2>
+                            <p id="type" class="text-white text-lg">Type</p>
                             <p id="owner" class="text-white text-lg">Owner Name</p>
                             <p id="area_city" class="text-white text-lg">Juinagar,Navi Mumbai</p>
                             <p class="text-white text-lg"><i class="fa-solid fa-phone"></i><span id="phone">+91 1425789630</span></p>
-                        </div>
-                    </div>
-
-                    <div class="h-[200px] w-[20%] font-[Poppins] flex flex-col mx-auto ml-10 p-6 bg-[#2E8BC0] text-white shadow-lg rounded-4xl items-center gap-6 hover:shadow-2xl hover:shadow-black">
-                        <div class="h-40 w-40 rounded-full border-[16px] border-green-500 text-white text-3xl flex flex-col justify-center items-center">
-                            12
-                            <h2 class="text-white text-lg">Donations</h2>
                         </div>
                     </div>
                 </section>
@@ -134,19 +135,20 @@
                             <input id="food_name" type="text" placeholder="Food Name" class="w-full bg-white text-black p-2 border rounded-2xl" required>
                             <select id="food_quantity" class="w-full bg-white text-black p-2 border rounded-2xl" required>
                                 <option value="" disabled selected>Select Quantity</option>
-                                <option value="small">Small (1-5 Servings)</option>
-                                <option value="medium">Medium (6-20 Servings)</option>
-                                <option value="large">Large (20+ Servings)</option>
+                                <option value="Small (1-5 Servings)">Small (1-5 Servings)</option>
+                                <option value="Medium (6-20 Servings)">Medium (6-20 Servings)</option>
+                                <option value="Large (20+ Servings)">Large (20+ Servings)</option>
                             </select>
                             <select id="food_type" class="w-full font-[Poppins] bg-white text-black p-2 border rounded-2xl" required>
                                 <option value="" disabled selected>Select Food Type</option>
-                                <option value="cooked">Cooked Food</option>
-                                <option value="baked">Baked Food</option>
-                                <option value="fruits_vegetables">Fruits & Vegetables</option>
-                                <option value="dairy">Dairy Products</option>
-                                <option value="packaged">Packaged Food</option>
-                                <option value="any">Any</option>
+                                <option value="Cooked Food">Cooked Food</option>
+                                <option value="Baked Food">Baked Food</option>
+                                <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                                <option value="Dairy Products">Dairy Products</option>
+                                <option value="Packaged Food">Packaged Food</option>
+                                <option value="Any">Any</option>
                             </select>
+
                             <textarea id="description" placeholder="Description" class="w-full bg-white text-black p-2 border rounded-2xl" required></textarea>
                             <button id="list_food_btn" type="submit" class="w-full bg-green-400 text-white text-xl font-bold py-2 rounded-lg hover:bg-green-500 cursor-pointer">
                             List Food
@@ -154,8 +156,13 @@
                         </div>
 
                         <div id="upload_img" class="w-[50%] ml-10 flex flex-col items-center space-y-4">
+                            <select id="food_category" class="w-full font-[Poppins] bg-white text-black p-2 border rounded-2xl" required>
+                                <option value="" disabled selected>Select Food Category</option>
+                                <option value="Veg">Veg</option>
+                                <option value="NonVeg">Non-Veg</option>
+                            </select>
                             <input type="file" id="imageInput" class="w-full bg-white text-black p-2 border rounded-2xl">
-                            <img id="previewImg" class="h-40 w-80 rounded-lg hidden ">
+                            <img id="previewImg" class="h-40 w-80 rounded-lg">
                         </div>
                     </form>
                 </section>
@@ -195,186 +202,93 @@
     
                     
                 </div>
-                <!-- <div class="h-10 w-full bg-black"></div> -->
+              
             </div>
-        </section>   
-
-
-       
-
-            
+        </section>             
             </div>
         </div>
 
-
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <section id="donor_inbox_section" class="flex h-[1100px] w-[75%] mt-10 hidden ">
             <div class="h-[980px] w-[100%] m-10 mr-5 rounded-4xl bg-[#2E8BC0] hover:shadow-2xl hover:shadow-black">
                 <div><h2 class="h-16 font-[Poppins] pt-5 text-2xl text-black font-bold ml-14">Inbox</h2></div>
     
-                <div class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');">
-                        </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Donation Picked Up</h3>
-                            <p class="text-gray-600">Your recent donation has been collected successfully.</p>
-                        </div>
-                    </div>
-    
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">New Donation Request</h3>
-                            <p class="text-gray-600">A nearby NGO is requesting food donations.</p>
-                        </div>
-                    </div>
-    
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
+                <div id="donor_inbox_box" class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
                 </div>
     
             </div>
         </section>
-
-
-
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <section id="past_donations_section" class="flex h-[1100px] w-[75%] mt-10 hidden ">
             <div class="h-[980px] w-[100%] m-10 mr-5 rounded-4xl bg-[#2E8BC0] hover:shadow-2xl hover:shadow-black">
                 <div><h2 class="h-16 font-[Poppins] pt-5 text-2xl text-black font-bold ml-14">Past Donations</h2></div>
     
-                <div class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');">
-                        </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Donation Picked Up</h3>
-                            <p class="text-gray-600">Your recent donation has been collected successfully.</p>
-                        </div>
-                    </div>
-    
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">New Donation Request</h3>
-                            <p class="text-gray-600">A nearby NGO is requesting food donations.</p>
-                        </div>
-                    </div>
-    
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white shadow-md rounded-4xl flex items-center gap-6">
-                        <div class="w-16 h-16 bg-gray-300 rounded-full bg-cover bg-center" style="background-image: url('/images/noprofile.png');"></div>
-                        <div class="flex flex-col">
-                            <h3 class="text-lg font-semibold">Thank You!</h3>
-                            <p class="text-gray-600">Your contribution has helped feed 20 people today.</p>
-                        </div>
-                    </div>
-
+                <div id="past_donations_box" class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
                 </div>
     
             </div>
         </section>
-        
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+        <section id="current_listing_section" class="flex h-[1100px] w-[75%] mt-10 hidden ">
+            <div class="h-[980px] w-[100%] m-10 mr-5 rounded-4xl bg-[#2E8BC0] hover:shadow-2xl hover:shadow-black">
+                <div><h2 class="h-16 font-[Poppins] pt-5 text-2xl text-black font-bold ml-14">Current/Active Listings</h2></div>
     
-    <footer class="h-52 w-full bg-gray-800"></footer>
+                <div id="current_listings_box" class="w-[100%] h-[900px] p-10 space-y-4 overflow-y-auto">
+                </div>
+    
+            </div>
+        </section>
+    </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+    <footer class="w-full bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          
+          <!-- About Section -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">About Us</h2>
+            <p class="text-sm text-gray-300">
+              We are committed to reducing food waste and helping those in need through smart donations and community collaboration.
+            </p>
+          </div>
+      
+          <!-- Quick Links -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">Quick Links</h2>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><a href="/dashboard" class="hover:text-white">Dashboard</a></li>
+              <li><a href="/donations" class="hover:text-white">My Donations</a></li>
+              <li><a href="aboutus.html" class="hover:text-white">About Us</a></li>
+              <li><a href="contactus.html" class="hover:text-white">Contact Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact Info -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">Contact</h2>
+            <p class="text-sm text-gray-300">
+              Email: support123@annasetu.org<br>
+              Phone: +91 11001 00000<br>
+              Location: Navi Mumbai, India
+            </p>
+          </div>
+      
+          <!-- Social Media -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">Follow Us</h2>
+            <div class="flex gap-4">
+              <a href="#" class="hover:text-blue-400">Facebook</a>
+              <a href="#" class="hover:text-sky-400">Twitter</a>
+              <a href="#" class="hover:text-pink-400">Instagram</a>
+            </div>
+          </div>
+      
+        </div>
+      
+        <!-- Bottom Line -->
+        <div class="text-center text-gray-400 text-sm mt-10 border-t border-gray-700 pt-4">
+          © 2025 Food Donation Platform. All rights reserved.
+        </div>
+      </footer>
+      
 </body>
 </html>

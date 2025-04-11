@@ -38,13 +38,13 @@
         <div class="h-32 w-[350px] bg-[url('/Copy_of_FOODLINK(2).png')] bg-cover"></div>
       </a>
         
-        <div id="navtabs_container" class="flex ml-[600px] align-middle gap-9 font-medium  text-[22px] list-none">
-          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a id="home" href="index.html">Home</a></li>
-          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
-          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
-          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">About Us</a></li>
-          <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="index.html">Contact Us</a></li>
-      </div>
+      <div id="navtabs_container" class="flex ml-[600px] align-middle gap-9 font-medium  text-[22px] list-none">
+        <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a id="home" href="index.html">Home</a></li>
+        <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="donors.html">Donors</a></li>
+        <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="charity.html">Charity</a></li>
+        <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="aboutus.html">About Us</a></li>
+        <li class="h-10 border-b-4 border-transparent hover:border-[#f08223] px-4 delay-150 duration-200 ease-in-out hover:text-[#2f4858] font-[Ubuntu]"><a href="contactus.html">Contact Us</a></li>
+    </div>
       </nav>
 
     <div id="charity_section1" class="h-[1100px] w-full flex pl-2 pr-2">
@@ -94,48 +94,69 @@
             </div>
         </div>
         
-        <div id="donors_listings" class="h-[1000px] w-[75%] flex flex-col bg-emerald-50">
-            <div id="donors_searchdiv" class="h-20 w-full p-2 bg-white">
+        <div id="charity_listings" class="h-[1000px] w-[75%] flex flex-col bg-emerald-50">
+            <div id="chaity_searchdiv" class="h-20 w-full p-2 bg-white">
               <form action="" class="flex items-center">
-                <input type="search" id="donors_searchbox" placeholder="Search Donors/Restaurants"  class="relative h-16 w-[50%] pl-6 pr-6 border-[1px] border-black ml-[5%] text-xl rounded-4xl focus:outline-none">
+                <input type="search" id="donors_searchbox" placeholder="Search NGO/Charities"  class="relative h-16 w-[50%] pl-6 pr-6 border-[1px] border-black ml-[5%] text-xl rounded-4xl focus:outline-none">
                 <i class="absolute m-[38%] fa-solid fa-magnifying-glass text-2xl cursor-pointer"></i>
               </form>
             </div>
 
-            <div id="donors_foodlistings" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto">
-
-              <div class="listing min-h-96 w-[1300px] mt-4 ml-[2%] p-5 rounded-3xl border-2 border-transparent hover:border-black bg-cyan-100 shadow-2xl shadow-gray-300 hover:shadow-2xl hover:shadow-black text-xl cursor-pointer">
-                <div>
-                  <h2 class="font-[Poppins] text-3xl font-bold inline text-yellow-800">Fresh Misal Pav and GulabJamun</h2>
-                  <img src="Veg.jpg" alt="" class="h-10 w-10 block float-right">
-                </div>
-                <div id="donors_listing_deatils" class="h-40 w-[30%] inline-block">
-                  <h2 class="font-[Poppins] text-xl font-semibold inline">Jay Mahararashtra</h2>
-                  <h5 class="font-[Poppins] text-lg inline">RESTAURANT</h5>
-                  <h3 class="text-lg"><i class="fa-solid fa-location-dot text-xl text-red-500 mr-2 mt-7"></i>Juinagar,Navi Mumbai</h3>
-                  <h3 class="text-lg"><i class="fa-solid fa-box text-xl mr-2 mt-2 "></i>Medium(6-20 Servings)</h3>
-                  <h3 class="text-lg"><i class="fa-solid fa-utensils text-xl mr-2 mt-2 "></i>Cooked Food</h3>
-                  <h3 class="text-lg"><i class="fa-solid fa-truck text-xl mr-2 mt-2 "></i>Delivery by Donor</h3>
-                  <h3 class="text-lg"><i class="fa-solid fa-phone text-xl mr-2 mt-2"></i>+91 1234567890</h3>
-                  <h3 class="text-lg"><i class="fa-solid fa-star text-xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i><i class="fa-solid fa-star text-2xl text-yellow-500 mr-2 mt-2"></i></h3>
-                </div>
-                <div id="donors_listing_photos" class="h-44 w-[55%] bg-amber-300 float-right mt-12 -mr-6 flex">
-                  <img src="/bg img 1.jpg" alt="" class="min-h-full w-44">
-                  <img src="/BGIMG3.png" alt="" class="min-h-full w-44">
-                  <img src="/bg img 1.jpg" alt="" class="min-h-full w-44">
-                  <img src="/BGIMG3.png" alt="" class="min-h-full w-44">
-                </div>
-                <form action="/index.html">
-                  <button id="request_food_btn" class="h-12 w-56 bg-green-400 rounded-3xl text-lg float-right cursor-pointer text-black border-2 border-transparent hover:border-black">Request</button>
-                </form>
-                
-              </div>
-
-             
-            
+            <div id="aniket2" class="h-[1100px] w-[1440px] flex flex-col p-5 overflow-y-auto">           
             </div>
         </div>
     </div>
-    <footer class="h-52 w-full bg-gray-800"></footer>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->    
+    <footer class="w-full bg-gray-800 text-white py-10">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <!-- About Section -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">About Us</h2>
+          <p class="text-sm text-gray-300">
+            We are committed to reducing food waste and helping those in need through smart donations and community collaboration.
+          </p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">Quick Links</h2>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="/dashboard" class="hover:text-white">Dashboard</a></li>
+            <li><a href="/donations" class="hover:text-white">My Donations</a></li>
+            <li><a href="aboutus.html" class="hover:text-white">About Us</a></li>
+            <li><a href="contactus.html" class="hover:text-white">Contact Us</a></li>
+          </ul>
+        </div>
+    
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">Contact</h2>
+          <p class="text-sm text-gray-300">
+            Email: support123@annasetu.org<br>
+            Phone: +91 11001 00000<br>
+            Location: Navi Mumbai, India
+          </p>
+        </div>
+    
+        <!-- Social Media -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">Follow Us</h2>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-blue-400">Facebook</a>
+            <a href="#" class="hover:text-sky-400">Twitter</a>
+            <a href="#" class="hover:text-pink-400">Instagram</a>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Bottom Line -->
+      <div class="text-center text-gray-400 text-sm mt-10 border-t border-gray-700 pt-4">
+        © 2025 Food Donation Platform. All rights reserved.
+      </div>
+    </footer>
+    
 </body>
 </html>

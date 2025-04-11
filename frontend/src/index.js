@@ -50,16 +50,17 @@ function clickOnRegister(){
 document.getElementById("registerlink").addEventListener("click",clickOnRegister);
 
 
-
-const apiKey = "pk.b7d3bfbe43b1ced8a286b05c3d5cac3e"; // Replace with your actual key
+//----------------------------------------------------------------------------------------------------------------------------------------------------
+const apiKey = "pk.b7d3bfbe43b1ced8a286b05c3d5cac3e"; 
 const input = document.getElementById("location");
 const suggestions = document.getElementById("suggestions");
 
+// Autocomplete suggestions
 input.addEventListener("input", async () => {
     let query = input.value.trim();
     if (query.length < 3) {
         suggestions.innerHTML = "";
-        suggestions.classList.add("hidden"); // Hide suggestions if input is too short
+        suggestions.classList.add("hidden");
         return;
     }
 
@@ -79,14 +80,13 @@ input.addEventListener("input", async () => {
             .map(item => `<li class="cursor-pointer p-2 hover:bg-gray-200" data-address="${item.display_name}">${item.display_name}</li>`)
             .join("");
 
-        suggestions.classList.remove("hidden"); // Show suggestions when available
+        suggestions.classList.remove("hidden");
 
-        // Add click event listener to the newly created <li> elements
         document.querySelectorAll("#suggestions li").forEach(li => {
-            li.addEventListener("click", function() {
-                input.value = this.getAttribute("data-address"); // Set input field
+            li.addEventListener("click", function () {
+                input.value = this.getAttribute("data-address");
                 suggestions.innerHTML = "";
-                suggestions.classList.add("hidden"); // Hide suggestions
+                suggestions.classList.add("hidden");
             });
         });
     } catch (error) {
@@ -101,24 +101,37 @@ document.addEventListener("click", (event) => {
     }
 });
 
+// Get current location and populate input
 function getCurrentLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(async (position) => {
-            const { latitude, longitude } = position.coords;
-            const url = `https://us1.locationiq.com/v1/reverse.php?key=${apiKey}&lat=${latitude}&lon=${longitude}&format=json`;
+        navigator.geolocation.getCurrentPosition(
+            async (position) => {
+                const { latitude, longitude } = position.coords;
+                const url = `https://us1.locationiq.com/v1/reverse.php?key=${apiKey}&lat=${latitude}&lon=${longitude}&format=json`;
 
-            let response = await fetch(url);
-            let data = await response.json();
-
-            document.getElementById("locationInput").value = data.display_name;
-        });
+                try {
+                    let response = await fetch(url);
+                    if (!response.ok) throw new Error("Reverse geocoding failed");
+                    let data = await response.json();
+                    input.value = data.display_name;
+                } catch (err) {
+                    console.error("Reverse geocoding failed:", err);
+                    alert("Failed to fetch location details.");
+                }
+            },
+            (error) => {
+                console.error("Geolocation error:", error.message);
+                alert("Unable to fetch current location.");
+            }
+        );
     } else {
         alert("Geolocation is not supported by your browser.");
     }
 }
-document.getElementById("currentLocation").addEventListener("click",getCurrentLocation);
 
+document.getElementById("currentLocation").addEventListener("click", getCurrentLocation);
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------
 document.querySelectorAll(".formbtns").forEach(btn => {
     btn.addEventListener("change", function () {
         // Remove styles from all radio labels
@@ -144,11 +157,6 @@ document.querySelectorAll(".formbtns").forEach(btn => {
         document.getElementById("CharityBtnBox").classList.add("h-16", "bg-[#f08223]", "text-white");
     }
 
-        // // Find the associated label and apply styles
-        // const selectedLabel = this.closest("label").querySelector(".radio-label");
-        // if (selectedLabel) {
-        //     selectedLabel.classList.add("h-16", "bg-[#f08223]", "text-white");
-        // }
 });
 
 
@@ -189,9 +197,19 @@ document.getElementById("registerFORM").addEventListener("submit", async (event)
         area_city: document.getElementById("area_city").value,
         government_id: document.getElementById("government_id").value,
         pickup_method: document.getElementById("pickup_method").value,
-        username: document.getElementById("username").value,
-        password: document.getElementById("password").value,
+        username: document.getElementById("register_username").value,
+        password: document.getElementById("register_password").value,
     };
+
+    const donorTypeElement = document.getElementById("donor_type_registration");
+    const donorType = document.getElementById("donor_type_registration").value;
+    if (userType === "Donor") {
+        donorTypeElement.setAttribute("required", "true");
+        UserData.type = donorType;
+    }
+    else {
+        donorTypeElement.removeAttribute("required");
+    }
 
     try {
         const response = await fetch("http://127.0.0.1:5000/register", {
@@ -227,16 +245,6 @@ document.getElementById("registerFORM").onsubmit = function() {
         document.getElementById("registerFORM").reset();
     }, 500);  // Small delay to ensure form submission
 };
-
-
-
-
-
-
-
-
-
-
 
 
 // Set up event listeners for role buttons
@@ -299,38 +307,18 @@ document.getElementById('loginBtn').addEventListener('click', async (e) => {
 
 
 
+const donorRadio=document.getElementById("donorRadio");
+const charityRadio=document.getElementById("charityRadio");
+const donorTypeOption= document.getElementById("donor_type_option");
 
-async function checkLoginStatus() {
-    const response = await fetch("http://127.0.0.1:5000/user-status", {
-        method: "GET",
-        credentials: "include"  // ✅ Required for session cookies
-    });
-
-    const data = await response.json();
-    console.log("User status:", data);
-    const home = document.getElementById("home");
-    const logotext=document.getElementById("logotext");
-    const logotext2=document.getElementById("logotext2");
-
-
-    if (data.logged_in) {
-        home.textContent = "Dashboard";  // ✅ Change text to Dashboard
-        
-        if (data.role === "donor") {
-            home.href = "donor_dashboard.html";  // ✅ Redirect donors to their dashboard
-            logotext.href = "donor_dashboard.html";
-            logotext2.href = "donor_dashboard.html";
-        } else {
-            home.href = "charity_dashboard.html";  // ✅ Redirect charities to their dashboard
-            logotext.href = "charity_dashboard.html";
-            logotext2.href = "charity_dashboard.html";
-        }
-    } else {
-        home.textContent = "Home";  // 🔄 Reset to Home if not logged in
-        home.href = "index.html";
-        logotext.href = "index.html";
-        logotext2.href = "index.html";
+donorRadio.addEventListener("change",()=>{
+    if(donorRadio.checked){
+        donorTypeOption.style.display="block";
     }
-}
+})
 
-checkLoginStatus();
+charityRadio.addEventListener("change",()=>{
+    if(charityRadio.checked){
+        donorTypeOption.style.display="";
+    }
+})

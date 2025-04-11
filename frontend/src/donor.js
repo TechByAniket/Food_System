@@ -1,8 +1,8 @@
 import './style.css'
 
-
+const BASE_URL = "https://annasetu-backend.onrender.com";
 async function checkLoginStatus() {
-    const response = await fetch("http://127.0.0.1:5000/user-status", {
+    const response = await fetch(`${BASE_URL}/user-status`, {
         method: "GET",
         credentials: "include"  // ✅ Required for session cookies
     });
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 async function checkLoginStatusRole() {
-    const response = await fetch("http://127.0.0.1:5000/user-status", {
+    const response = await fetch(`${BASE_URL}/user-status`, {
         method: "GET",
         credentials: "include"
     });
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/food-list-info", {
+        const response = await fetch(`${BASE_URL}/food-list-info`, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
             credentials: "include"
@@ -153,7 +153,7 @@ async function handleRequest(listingId) {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-        const response = await fetch('http://127.0.0.1:5000/create-request', {
+        const response = await fetch(`${BASE_URL}/create-request`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

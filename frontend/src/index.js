@@ -1,5 +1,6 @@
 import './style.css'
 
+const BASE_URL = "https://annasetu-backend.onrender.com";
 var featureCards=document.getElementsByClassName('feature-cards');
 var loginBoxButtons=document.getElementsByClassName('loginbox-buttons');
 let currentRole = '';
@@ -212,7 +213,7 @@ document.getElementById("registerFORM").addEventListener("submit", async (event)
     }
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/register", {
+        const response = await fetch(`${BASE_URL}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -222,7 +223,7 @@ document.getElementById("registerFORM").addEventListener("submit", async (event)
 
         
         const result = await response.json();
-        console.log("Server Response:", result); // ✅ Debugging
+        console.log("Server Response:", result); // Debugging
         alert(result.message);
 
         if (response.ok) {
@@ -285,7 +286,7 @@ document.getElementById('loginBtn').addEventListener('click', async (e) => {
     const role = document.getElementById('userRole').value;
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/login", {
+        const response = await fetch(`${BASE_URL}/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

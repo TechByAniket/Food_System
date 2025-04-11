@@ -1,7 +1,7 @@
 import './style.css';
 
 import { createClient } from "@supabase/supabase-js";
-
+const BASE_URL = "https://annasetu-backend.onrender.com";
 const SUPABASE_URL = "https://bdsyggaigzmrnurkmzkn.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJkc3lnZ2FpZ3ptcm51cmttemtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNzM0NTgsImV4cCI6MjA1ODc0OTQ1OH0.a4KyrWebWxUIKFxAX6JHLIFGSyVQ3TKyN5OvDGv5y38";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -50,17 +50,17 @@ current_listing_btn.addEventListener("click",()=>{
 })
 
 document.getElementById("logoutbtn").addEventListener("click", async function (event) {
-    event.preventDefault();  // ✅ Prevent default form submission
+    event.preventDefault();  // Prevent default form submission
 
-    const response = await fetch("http://127.0.0.1:5000/logout", {
+    const response = await fetch(`${BASE_URL}/logout`, {
         method: "POST",
-        credentials: "include"  // ✅ Send session cookies
+        credentials: "include"  //  Send session cookies
     });
 
     const data = await response.json();
 
     if (response.ok) {
-        window.location.href = `http://localhost:5173${data.redirect}`;  // Redirect to login page
+        window.location.href = `/${data.redirect}`;  // Redirect to login page
     } else {
         alert("Logout failed. Try again.");
     }
@@ -69,7 +69,7 @@ document.getElementById("logoutbtn").addEventListener("click", async function (e
 
 // --------------------------------------------------------------------------------------------------------------------
 async function loadUserData() {
-    const response = await fetch("http://127.0.0.1:5000/user-info", {
+    const response = await fetch(`${BASE_URL}/user-info`, {
         method: "GET",
         credentials: "include"  // Required to send session cookies
     });
@@ -77,7 +77,7 @@ async function loadUserData() {
     const data = await response.json();
 
     if (data.redirect) {
-        window.location.href = `http://localhost:5173${data.redirect}`;  //  Redirect to login if needed
+        window.location.href = `/${data.redirect}`;  //  Redirect to login if needed
     } else {
         document.getElementById("username").innerText ="Hello, "+ data.username;
         // document.getElementById("role").innerText = data.role;
@@ -94,9 +94,9 @@ loadUserData();
 
 // --------------------------------------------------------------------------------------------------------------------
 async function checkLoginStatus() {
-    const response = await fetch("http://127.0.0.1:5000/user-status", {
+    const response = await fetch(`${BASE_URL}/user-status`, {
         method: "GET",
-        credentials: "include"  // ✅ Required for session cookies
+        credentials: "include"  // Required for session cookies
     });
 
     const data = await response.json();
@@ -107,19 +107,19 @@ async function checkLoginStatus() {
 
 
     if (data.logged_in) {
-        home.textContent = "Dashboard";  // ✅ Change text to Dashboard
+        home.textContent = "Dashboard";  // Change text to Dashboard
         
         if (data.role === "donor") {
-            home.href = "donor_dashboard.html";  // ✅ Redirect donors to their dashboard
+            home.href = "donor_dashboard.html";  //  Redirect donors to their dashboard
             logotext.href = "donor_dashboard.html";
             logotext2.href = "donor_dashboard.html";
         } else {
-            home.href = "charity_dashboard.html";  // ✅ Redirect charities to their dashboard
+            home.href = "charity_dashboard.html";  //  Redirect charities to their dashboard
             logotext.href = "charity_dashboard.html";
             logotext2.href = "charity_dashboard.html";
         }
     } else {
-        home.textContent = "Home";  // 🔄 Reset to Home if not logged in
+        home.textContent = "Home";  //  Reset to Home if not logged in
         home.href = "index.html";
         logotext.href = "index.html";
         logotext2.href = "index.html";
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Submit form data
         try {
-            const response = await fetch("http://127.0.0.1:5000/list-food", {
+            const response = await fetch(`${BASE_URL}/list-food`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
         current_listings_box.innerHTML = ""; // Clear previous content
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/current-listings", {
+            const response = await fetch(`${BASE_URL}/current-listings`, {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include"
@@ -329,7 +329,7 @@ async function deleteListing(listingId) {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 5000); // 5 sec timeout
 
-        const response = await fetch('http://127.0.0.1:5000/delete-listing', {
+        const response = await fetch(`${BASE_URL}/delete-listing`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
         donor_inbox_box.innerHTML = ""; // Clear previous content
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/donor-requests", {
+            const response = await fetch(`${BASE_URL}/donor-requests`, {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include"
@@ -504,7 +504,7 @@ async function acceptRequest(reqListingId) {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 5000); // 5 sec timeout
 
-        const response = await fetch('http://127.0.0.1:5000/update-listing-status', {
+        const response = await fetch(`${BASE_URL}/update-listing-status`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -552,7 +552,7 @@ async function denyRequest(reqListingId) {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 5000); // 5 sec timeout
 
-        const response = await fetch('http://127.0.0.1:5000/update-listing-status', {
+        const response = await fetch(`${BASE_URL}/update-listing-status`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -604,7 +604,7 @@ document.addEventListener("DOMContentLoaded", () => {
         past_donations_box.innerHTML = ""; // Clear previous content
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/donor-approved-requests", {
+            const response = await fetch(`${BASE_URL}/donor-approved-requests`, {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include"
